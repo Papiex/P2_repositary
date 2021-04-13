@@ -1,6 +1,6 @@
 from main_functions import all_category_links, writing_to_csv, append_to_csv, split_name_category
 
-import requests
+import requests 
 
 
 cat_names = {}

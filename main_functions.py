@@ -3,7 +3,7 @@ from functions import find_info_book, search_books_links_cat
 import csv
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup 
 
 
 def all_category_links():

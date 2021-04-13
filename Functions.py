@@ -1,7 +1,7 @@
 import csv
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup 
 
 
 def find_info_book(link_of_book):
