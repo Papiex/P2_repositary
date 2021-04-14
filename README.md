@@ -9,9 +9,7 @@ __1- You need to create virtual env with this command :__
 
 *The virtual env is installed in the directory where you are (the path) with your terminal*
 
-```bash
-python -m venv env
-```
+- ```python -m venv env```
 
 __2- Now you have to activate your virtual env, the default path is :__
 - if you use PowerShell =>
@@ -25,10 +23,9 @@ __3- This program need some libraries, for installing them, use this command (in
 
 *View requirements.txt to know which library/version is used*
 
-```bash
-pip install -r requirements.txt
-```
+- ```pip install -r requirements.txt```
+
 ## Launch the script
 Enter this command in your virtual env :
 
-```py main.py```
+- ```py main.py```
