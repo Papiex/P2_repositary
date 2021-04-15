@@ -28,4 +28,4 @@ __3- This program need some libraries, for installing them, use this command (in
 ## Launch the script
 Enter this command in your virtual env :
 
-- ```py main.py```
+- ```py main_code_loading.py```
