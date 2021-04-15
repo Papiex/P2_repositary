@@ -4,11 +4,6 @@ from transformation_functions import find_info_book
 import csv
 import os
 
-
-
-
-
-
 #code_loading
 def make_dir_category(name_cat):
     """Make directories => csv files/name_cat/jpg files/"""
