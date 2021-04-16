@@ -36,7 +36,7 @@ def find_info_book(link_of_book):
             description = soup.find("h2").find_next().text
 
     except AttributeError:
-        print("no description for " + link_of_book)
+        #print("no description for " + link_of_book)
         description = ("This book have no description")
         pass
 
