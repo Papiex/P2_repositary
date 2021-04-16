@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup 
 
 
-#extract
+
 def search_books_links_cat(category_link):
     """ with values as category_link, return all books links of category_link in a list """
 
@@ -22,7 +22,7 @@ def search_books_links_cat(category_link):
 
     return books_links
 
-#extract
+
 def all_category_links():
     """ Search and return all category urls and return them in a list """
 
@@ -44,7 +44,7 @@ def all_category_links():
 
     return category_links
 
-#extract
+
 def picture_download(img_link, name_cat, number):
     """download picture with this path => name_cat/jpg files/Picture_number.png"""
     
