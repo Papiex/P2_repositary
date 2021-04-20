@@ -86,7 +86,6 @@ __2-__ Now writing and downloading pictures for category "TRAVEL" on book.toscra
 
 *We can see the numbers of books extracted in real time*
 
-*terminal*
 ![image](https://user-images.githubusercontent.com/81369778/115397526-7d335c00-a1e6-11eb-98e5-0e01d500952d.png)
 
 __3-__ At the same time, a folder is created and named according to the current category (TRAVEL in this case) :
@@ -104,9 +103,7 @@ __-4__ In this folder __(TRAVEL)__, 2 files are created :
 
 __-5__ When he's finish one category we can know how much time has elapsed for scraping this category also the numbers of books extracted :
 
-*terminal*
 ![image](https://user-images.githubusercontent.com/81369778/115394962-a3a3c800-a1e3-11eb-9caa-d9c61c774d50.png)
-
 
 __-6__ Here is the CSV file after writing of the category "Travel"
 
