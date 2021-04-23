@@ -1,11 +1,10 @@
-from extract import get_response_of_book
-from typing import Optional, List
-
 import os
 import time
+from typing import List, Optional
 
 import requests
 from bs4 import BeautifulSoup
+from extract import get_response_of_book
 
 
 def find_info_book(link_of_book: str):

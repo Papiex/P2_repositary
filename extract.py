@@ -1,11 +1,9 @@
+import time
 from typing import List
-
-from bs4 import BeautifulSoup
 from urllib.error import HTTPError
 
 import requests
-import time
-
+from bs4 import BeautifulSoup
 
 
 def search_books_links_category(category_link: str):

@@ -1,9 +1,9 @@
-from extract import search_books_links_category, download_picture
-from transform import find_info_book
-
 import csv
 import os
 import time
+
+from extract import download_picture, search_books_links_category
+from transform import find_info_book
 
 
 def make_directory_category(name_category: str):

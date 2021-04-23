@@ -1,10 +1,10 @@
-from extract import get_all_category_links
-from transform import split_name_category
-from code_load import make_directory_category, writing_to_csv, append_to_csv
-
 import os
 
-import requests 
+import requests
+from code_load import append_to_csv, make_directory_category, writing_to_csv
+from extract import get_all_category_links
+from transform import split_name_category
+
 
 def main():
     
