@@ -1,7 +1,7 @@
 import os
 
 import requests
-from code_load import append_to_csv, make_directory_category, writing_to_csv
+from load import append_to_csv, make_directory_category, writing_to_csv
 from extract import get_all_category_links
 from transform import split_name_category
 
