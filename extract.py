@@ -24,7 +24,7 @@ def search_books_links_category(category_link: str) -> List[str]:
             book_link = a["href"].replace("../../../", "")
             books_links.append(
                 "http://books.toscrape.com/catalogue/" + book_link)
-    books_links.append("http://books.toscrape.com/catalogue/a-light-in-the-attic_1001/index.html")
+    #books_links.append("http://books.toscrape.com/catalogue/a-light-in-the-attic_1001/index.html")
     return books_links
 
 
@@ -71,15 +71,24 @@ def get_response_of_book(link_of_book: str) -> bool:
         soup = BeautifulSoup(response.content, "lxml")
         no_response = False
 
-
-    else:
+    elif response.status_code >= 400 and response.status_code <= 499:
         print("Something wrong with " + link_of_book)
-        print("Error n° " + str(response.status_code))
+        print("Client side error n° " + str(response.status_code) + (" Please check url..."))
         time.sleep(1)
         print("Skipping to the next book...")
         time.sleep(1)
         no_response = True
         soup = None
+
+    elif response.status_code >= 500 and response.status_code <= 527:
+        print("Something wrong with " + link_of_book)
+        print("Server side error n° " + str(response.status_code))
+        time.sleep(1)
+        print("Skipping to the next book...")
+        time.sleep(1)
+        no_response = True
+        soup = None
+
     return soup, no_response
 
 
@@ -101,8 +110,6 @@ def find_info_book(link_of_book: str) -> List[str]:
         titles = soup.find("h1").text
         info.append(titles)
 
-        # Some books have no description, with this, if book have no description,
-        # replace description by ("This book have no description")
         try:
             confirm_description = soup.find(
                 id="product_description").find("h2").text
@@ -122,8 +129,7 @@ def find_info_book(link_of_book: str) -> List[str]:
         info.append(img_link)
 
         star_rating = soup.find_all("p", class_="star-rating")[0].get("class")
-        # Search the note and remove "star-rating" if classes come to be in the
-        # wrong order in index list.
+
         if "star-rating" in star_rating:
             star_rating.remove("star-rating")
             info.append(star_rating[0])
@@ -135,7 +141,10 @@ def find_info_book(link_of_book: str) -> List[str]:
 
 
 def get_index_info(tr_list: List[str]) -> List[str]:
-    """Try to transform and append required info from list, if dont find replace by (No ... found for this book)"""
+    """
+    Try to transform and append required info from list,
+    if dont find replace by (No ... found for this book)
+    """
 
     info = []
 

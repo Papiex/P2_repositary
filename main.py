@@ -6,15 +6,15 @@ from extract import get_all_category_links
 from transform import split_name_category
 
 
-def main():
+def main() -> None:
     
     category_names_dict: dict[str, str] = {}
     category_links = get_all_category_links()
 
     for link in category_links:
-        responsive = requests.get(link)
+        response = requests.get(link)
 
-        if responsive.ok:
+        if response.ok:
             link = link.replace("index.html", "page-1.html")
             resp = requests.get(link)
 
@@ -33,10 +33,8 @@ def main():
                     # append page link to name_cat list in cat_names dict
                     category_names_dict[name_category].append(link)
                     b += 1
-                    link = link.replace("page-" + str(b - 1) +
-                                        ".html", "page-" + str(b) + ".html")
-                    resp = requests.get(link)
-                # View docstring of append_to_csv()    
+                    link = link.replace("page-" + str(b - 1) + ".html", "page-" + str(b) + ".html")
+                    resp = requests.get(link)   
                 append_to_csv(category_names_dict, name_category)
             
             else:
@@ -48,9 +46,7 @@ def main():
                 writing_to_csv(name_category)
                 # append index page to [name_category] list.
                 category_names_dict[name_category] = [link]
-                # View docstring of append_to_csv()
                 append_to_csv(category_names_dict, name_category)
 
 if __name__ == "__main__":
-
     main()

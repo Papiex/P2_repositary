@@ -8,5 +8,5 @@ def split_name_category(link: str) -> str:
     link = link.split("_")[0]
     link = link.replace(
         "http://books.toscrape.com/catalogue/category/books/", "")
-    link = link.capitalize().replace("-"," ").title()
+    link = link.replace("-"," ").title()
     return link

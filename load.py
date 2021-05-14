@@ -11,8 +11,8 @@ def make_directory_category(name_category: str) -> None:
     try:
         os.makedirs("csv files/" + name_category + "/jpg files/")
 
-    except BaseException:
-        print("Error in creation of directories")
+    except OSError:
+        print("Directories already exists...")
         pass
 
 
@@ -50,7 +50,6 @@ def append_to_csv(category_names_dict: dict[str], name_category: str) -> None:
     number: int = 1
     book_link_count = 0
     t0 = time.time()
-
     # call the function search_books_links_cat() for each url in  {dict}=>category_names_dict(key)=>[names_category]<=[list]
     # all books links in will be stored in [books_links]
     for link in category_names_dict[name_category]:
@@ -61,7 +60,6 @@ def append_to_csv(category_names_dict: dict[str], name_category: str) -> None:
             info, no_response = find_info_book(book_link)
 
             if no_response == False:
-
                 download_picture(info[7], name_category, number)
                 # print the progress of books/ picture downloaded
                 print(str(book_link_count) + " writed/download...", end="\r")
