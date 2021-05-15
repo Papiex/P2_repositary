@@ -28,7 +28,15 @@
 ## Requirements
 This script is write with Python 3 and require minimum :
 ```bash
-Python 3.x.x
+Python 3.9.0
+```
+## Gitbash
+You have to clone the deposit with this command on gitbash and naviguate to the develop branch :
+```
+git clone https://github.com/Papiex/P2_repository
+```
+```
+git checkout develop
 ```
 ## Installation on Windows
 __1- You need to create virtual env with this command :__
